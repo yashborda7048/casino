@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.ms-74 {
+  margin-left: 74px;
+}
+
+.btn-dark {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 24px;
+  gap: 8px;
+  background-color: #794dfd !important;
+  border-radius: 10px;
+  transition: 0.3s ease;
+  color: #fff;
+}
+.btn-dark:hover, .btn-dark:active {
+  background-color: #794dfd;
+}
+
+.navbar {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  position: fixed;
+  z-index: 99;
+  top: 0%;
+  width: calc(100% - 74px) !important;
+  min-height: 80px;
+  background: rgba(19, 20, 32, 0.4);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+  padding: 16px 20px 16px 20px;
+}
+.navbar .navbar-toggler {
+  border: 0;
+  height: 80px;
+}
+.navbar .navbar-toggler:focus, .navbar .navbar-toggler:active {
+  outline: none;
+  box-shadow: none;
+  border: 0;
+}
+.navbar .navbar-toggler .navbar-toggler-icon {
+  width: 20px;
+  height: 3px;
+  background: #fff;
+  display: block;
+  background-image: none;
+  transition: 0.5s ease-in-out;
+}
+.navbar .navbar-toggler .navbar-toggler-icon:focus {
+  outline: none;
+  box-shadow: none;
+  border: 0;
+}
+.navbar .navbar-toggler .top-bar {
+  margin-top: 5px;
+  transform: rotate(135deg);
+}
+.navbar .navbar-toggler .bottom-bar {
+  margin-top: -3px;
+  transform: rotate(-135deg);
+}
+.navbar .navbar-toggler {
+  background-color: transparent;
+}
+.navbar .navbar-toggler:hover {
+  background-color: transparent;
+}
+.navbar .collapsed .top-bar {
+  margin-top: 0px;
+  transform: rotate(0deg);
+}
+.navbar .collapsed .bottom-bar {
+  margin-top: 5px;
+  transform: rotate(0deg);
+}
+.navbar .search {
+  width: 64px;
+  height: 48px;
+  background: #794dfd;
+  border-radius: 20px;
+}
+.navbar .form-control {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #fff;
+  width: 608px;
+}
+.navbar .form-control ::-moz-placeholder {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #7e7e7e;
+}
+.navbar .form-control ::placeholder {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  color: #7e7e7e;
+}
+.navbar .form-select {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #fff;
+}
+.navbar .form-select option {
+  background: #794dfd;
+  border-radius: 10px;
+  color: #fff;
+}
+.navbar .btn_list {
+  padding: 0%;
+  list-style: none;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+@media (max-width: 991.98px) {
+  .navbar .form-control {
+    width: 100%;
+  }
+  .navbar .btn_list .form-select {
+    width: 45%;
+  }
+  .navbar .btn_list a {
+    width: 25%;
+  }
+}
+.left_menu {
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  width: 74px;
+  height: 100vh;
+  padding: 20px 17px;
+  background: #131420;
+  box-shadow: 4px 0px 12px rgba(0, 0, 0, 0.15);
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.left_menu::-webkit-scrollbar {
+  display: none;
+}
+.left_menu .logo {
+  padding: 8px;
+}
+.left_menu .menu_list {
+  margin-top: 54px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  list-style-type: none;
+  padding: 0;
+}
+.left_menu .menu_list .active img {
+  background-color: #fff;
+}
+.left_menu .favorite_list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  list-style-type: none;
+  padding: 0;
+}
+.left_menu .favorite_list li div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(160, 175, 196, 0.4);
+  border-radius: 50%;
+}
+.left_menu .favorite_list li div img {
+  margin-top: -2px;
+}
+.left_menu .favorite_list li .plus_border {
+  background: rgba(121, 77, 253, 0.1);
+  border: 1px dashed #794dfd;
+}
+.left_menu .logout {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+}
+
+#hero_img_slider {
+  position: relative;
+  top: 0%;
+}
+#hero_img_slider .carousel-inner {
+  height: 514px;
+}
+#hero_img_slider .carousel-inner .carousel-item img {
+  display: block;
+  width: 100%;
+  max-height: 514px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=main.css.map */

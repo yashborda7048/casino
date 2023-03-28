@@ -1,0 +1,133 @@
+.navbar {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  position: fixed;
+  z-index: 99;
+  top: 0%;
+  width: calc(100% - 74px) !important;
+  min-height: 80px;
+  background: rgba(19, 20, 32, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 16px 20px 16px 20px;
+
+  .navbar-toggler {
+    border: 0;
+    height: 80px;
+
+    &:focus,
+    &:active {
+      outline: none;
+      box-shadow: none;
+      border: 0;
+    }
+
+    .navbar-toggler-icon {
+      width: 20px;
+      height: 3px;
+      background: #fff;
+      display: block;
+      background-image: none;
+      transition: 0.5s ease-in-out;
+
+      &:focus {
+        outline: none;
+        box-shadow: none;
+        border: 0;
+      }
+    }
+
+    .top-bar {
+      margin-top: 5px;
+      transform: rotate(135deg);
+    }
+
+    .bottom-bar {
+      margin-top: -3px;
+      transform: rotate(-135deg);
+    }
+  }
+
+  .navbar-toggler {
+    background-color: transparent;
+
+    &:hover {
+      background-color: transparent;
+    }
+  }
+
+  .collapsed {
+    .top-bar {
+      margin-top: 0px;
+      transform: rotate(0deg);
+    }
+
+    .bottom-bar {
+      margin-top: 5px;
+      transform: rotate(0deg);
+    }
+  }
+
+  .search {
+    width: 64px;
+    height: 48px;
+    background: #794dfd;
+    border-radius: 20px;
+  }
+
+  .form-control {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #fff;
+    width: 608px;
+
+    ::placeholder {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 17px;
+      color: #7e7e7e;
+    }
+  }
+
+  .form-select {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    option {
+      background: #794dfd;
+      border-radius: 10px;
+      color: #fff;
+    }
+  }
+
+  .btn_list {
+    padding: 0%;
+    list-style: none;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .navbar {
+    .form-control {
+      width: 100%;
+    }
+    .btn_list {
+      .form-select {
+        width: 45%;
+      }
+      a {
+        width: 25%;
+      }
+    }
+  }
+}

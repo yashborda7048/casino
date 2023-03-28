@@ -1,0 +1,15 @@
+#hero_img_slider {
+    position: relative;
+    top: 0%;
+    .carousel-inner {
+        height: 514px;
+        .carousel-item {
+            img {
+                display: block;
+                width: 100%;
+                max-height: 514px;
+                object-fit: cover;
+            }
+        }
+    }
+}
