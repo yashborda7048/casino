@@ -1,0 +1,79 @@
+.offer_slider {
+  position: relative;
+  margin-top: -60px;
+  background: #20143a;
+  border-radius: 10px;
+  margin-left: 14px;
+  margin-right: 14px;
+  padding: 5px 16px;
+  display: flex;
+
+  .winner_head {
+    font-family: "BigNoodleTitling";
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 15px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    width: 127px;
+  }
+
+  .slide-track {
+    width: calc(163px * 12);
+    display: flex;
+    overflow: hidden;
+  }
+
+  .winner_card {
+    width: 163px;
+    height: 50px;
+    display: flex;
+    gap: 18px;
+    margin-left: 10px;
+    margin-right: 10px;
+    animation: scroll 40s linear infinite;
+    .game_name {
+      font-size: 12px;
+      line-height: 15px;
+      color: #ffffff;
+      white-space: nowrap;
+      margin-bottom: 0%;
+      width: 95px;
+      text-overflow: ellipsis; 
+      overflow: hidden;
+    }
+    .winner_name {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 19px;
+      color: #eae7d6;
+      margin-bottom: 0%;
+      width: 50px;
+      text-overflow: ellipsis; 
+      overflow: hidden;
+    }
+    .winner_price {
+      background: #454545;
+      border-radius: 3px;
+      font-weight: 700;
+      font-size: 10px;
+      line-height: 12px;
+      text-align: center;
+      padding: 2px 4.5px;
+      p {
+        color: #ffe923;
+        margin-bottom: 0%;
+      }
+    }
+  }
+}
+
+
+@keyframes scroll {
+    0% {transform: translateX(0);}
+    100% {transform: translatex(calc(-163px * 6))}
+  }

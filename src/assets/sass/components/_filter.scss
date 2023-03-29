@@ -1,0 +1,18 @@
+fieldset {
+  min-width: 94px;
+  position: relative;
+  .navbar-collapse {
+    position: absolute;
+    z-index: 99;
+    background-color: #131420;
+    min-width: 140px;
+
+    .rowline {
+      width: 100%;
+      background-color: $primary-color;
+      &:hover {
+        background: transparent;
+      }
+    }
+  }
+}

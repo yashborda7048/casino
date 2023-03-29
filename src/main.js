@@ -4,5 +4,6 @@ import router from './router/routers.js'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap'
 import '@/assets/sass/main.css'
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
 createApp(App).use(router).mount('#app')

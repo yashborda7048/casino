@@ -1,4 +1,4 @@
-.btn-dark {
+.btn-primary {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -6,11 +6,41 @@
   padding: 13px 24px;
   gap: 8px;
   background-color: $primary_color !important;
-  border-radius: 10px;
+  border-radius: 20px;
   transition: 0.3s ease;
   color: #fff;
+  text-decoration: none;
+  border: none;
+  white-space: nowrap;
+
   &:hover,
   &:active {
-    background-color: $primary_color;
+    box-shadow: 0 -3px 20px rgba(255, 255, 255, 0.25),
+      0 0px 5px rgba(255, 255, 255, 0.22);
+    color: #fff;
+    background-color: transparent !important;
+  }
+}
+.btn-dark {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 13px 24px;
+  gap: 8px;
+  background-color: transparent !important;
+  border-radius: 20px;
+  transition: 0.3s ease;
+  color: #fff;
+  text-decoration: none;
+  border: none;
+  white-space: nowrap;
+
+  &:hover,
+  &:active {
+    box-shadow: 0 -3px 20px rgba(255, 255, 255, 0.25),
+      0 0px 5px rgba(255, 255, 255, 0.22);
+    color: #fff;
+    background-color: $primary_color !important;
   }
 }

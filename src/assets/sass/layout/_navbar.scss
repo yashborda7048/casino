@@ -6,14 +6,20 @@
   z-index: 99;
   top: 0%;
   width: calc(100% - 74px) !important;
-  min-height: 80px;
+  min-height: 60px;
   background: rgba(19, 20, 32, 0.4);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  padding: 16px 20px 16px 20px;
+  padding: 16px 20px;
+  transition: all 0.3s ease;
+
+  .navbar-collapse {
+    transition: all 0.3s ease;
+  }
 
   .navbar-toggler {
     border: 0;
-    height: 80px;
+    height: 30px;
 
     &:focus,
     &:active {
@@ -72,6 +78,7 @@
     width: 64px;
     height: 48px;
     background: #794dfd;
+    border: none;
     border-radius: 20px;
   }
 
@@ -83,7 +90,8 @@
     font-size: 14px;
     line-height: 17px;
     color: #fff;
-    width: 608px;
+    min-width: 100%;
+    max-width: 608px;
 
     ::placeholder {
       font-weight: 500;
@@ -113,6 +121,10 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
+    a {
+      height: 48px;
+      border-radius: 20px;
+    }
   }
 }
 
