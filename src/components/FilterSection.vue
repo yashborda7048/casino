@@ -14,127 +14,28 @@
                     <div class="seleted collapse navbar-collapse " id="Content-1">
                         <div class="d-flex flex-column align-items-start">
                             <div class="d-flex gap-3 ps-2 rowline">
-                                <input type="checkbox" id="jack" value="Jack" v-model="checkedNames">
-                                <label for="jack">Jack</label>
+                                <input type="checkbox" id="crazy_monkey" value="crazy_monkey" v-model="checkedNames">
+                                <label for="crazy_monkey">Crazy Monkey</label>
                             </div>
                             <div class="d-flex gap-3 ps-2 rowline">
-                                <input type="checkbox" id="john" value="John" v-model="checkedNames">
-                                <label for="john">John</label>
+                                <input type="checkbox" id="lucky_coin" value="lucky_coin" v-model="checkedNames">
+                                <label for="lucky_coin">Lucky Coin</label>
                             </div>
                             <div class="d-flex gap-3 ps-2 rowline">
-                                <input type="checkbox" id="mike" value="Mike" v-model="checkedNames">
-                                <label for="mike">Mike</label>
+                                <input type="checkbox" id="book_of_gold" value="book_of_gold" v-model="checkedNames">
+                                <label for="book_of_gold">Book Of Gold</label>
                             </div>
                         </div>
                     </div>
                 </fieldset>
             </div>
             <div class="row" id="card_container">
-                <div class="col-6 col-md-4 col-lg-3 ">
+                <div class="col-6 col-md-4 col-lg-3 " v-for="item in game_list" :key="item.img">
                     <div class="game_card">
-                        <img src="../assets/img/crazy_monkey.svg" alt="">
+                        <img :src="get_img(item.img)" alt="">
                         <div class="card_body">
-                            <h5 class="card_title">Crazy Monkey</h5>
-                            <p class="card_sub_title">Рекомендовано</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 ">
-                    <div class="game_card">
-                        <img src="../assets/img/lucky_coin.svg" alt="">
-                        <div class="card_body">
-                            <h5 class="card_title">Lucky Coin</h5>
-                            <p class="card_sub_title">Рекомендовано</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 ">
-                    <div class="game_card">
-                        <img src="../assets/img/book_of_gold.svg" alt="">
-                        <div class="card_body">
-                            <h5 class="card_title">Book Of Gold</h5>
-                            <p class="card_sub_title">Рекомендовано</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 ">
-                    <div class="game_card">
-                        <img src="../assets/img/haunted_money.svg" alt="">
-                        <div class="card_body">
-                            <h5 class="card_title">Haunted Money</h5>
-                            <p class="card_sub_title">Рекомендовано</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 ">
-                    <div class="game_card">
-                        <img src="../assets/img/vegas_night.svg" alt="">
-                        <div class="card_body">
-                            <h5 class="card_title">vegas Night</h5>
-                            <p class="card_sub_title">Рекомендовано</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 ">
-                    <div class="game_card">
-                        <img src="../assets/img/crazy_monkey.svg" alt="">
-                        <div class="card_body">
-                            <h5 class="card_title">Crazy Monkey</h5>
-                            <p class="card_sub_title">Рекомендовано</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 ">
-                    <div class="game_card">
-                        <img src="../assets/img/thunder_zeus.svg" alt="">
-                        <div class="card_body">
-                            <h5 class="card_title">Thunder Zeus</h5>
-                            <p class="card_sub_title">Рекомендовано</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 ">
-                    <div class="game_card">
-                        <img src="../assets/img/fruit_cocktak.svg" alt="">
-                        <div class="card_body">
-                            <h5 class="card_title">Fruit Cocktak</h5>
-                            <p class="card_sub_title">Рекомендовано</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 ">
-                    <div class="game_card">
-                        <img src="../assets/img/crazy_monkey.svg" alt="">
-                        <div class="card_body">
-                            <h5 class="card_title">Crazy Monkey</h5>
-                            <p class="card_sub_title">Рекомендовано</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 ">
-                    <div class="game_card">
-                        <img src="../assets/img/lucky_coin.svg" alt="">
-                        <div class="card_body">
-                            <h5 class="card_title">Lucky Coin</h5>
-                            <p class="card_sub_title">Рекомендовано</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 ">
-                    <div class="game_card">
-                        <img src="../assets/img/book_of_gold.svg" alt="">
-                        <div class="card_body">
-                            <h5 class="card_title">Book Of Gold</h5>
-                            <p class="card_sub_title">Рекомендовано</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-4 col-lg-3 ">
-                    <div class="game_card">
-                        <img src="../assets/img/haunted_money.svg" alt="">
-                        <div class="card_body">
-                            <h5 class="card_title">Haunted Money</h5>
-                            <p class="card_sub_title">Рекомендовано</p>
+                            <h5 class="card_title">{{ item.title }}</h5>
+                            <p class="card_sub_title">{{ item.sub_title }}</p>
                         </div>
                     </div>
                 </div>
@@ -236,13 +137,87 @@
 export default {
     data() {
         return {
-            checkedNames: []
+            checkedNames: [],
+            game_list: [
+                {
+                    img: 'crazy_monkey.svg',
+                    title: 'Crazy Monkey',
+                    sub_title: 'Рекомендовано',
+                    search: 'crazy_monkey'
+                },
+                {
+                    img: 'lucky_coin.svg',
+                    title: 'Lucky Coin',
+                    sub_title: 'Рекомендовано',
+                    search: 'lucky_coin'
+                },
+                {
+                    img: 'book_of_gold.svg',
+                    title: 'Book Of Gold',
+                    sub_title: 'Рекомендовано',
+                    search: 'book_of_gold'
+                },
+                {
+                    img: 'haunted_money.svg',
+                    title: 'Haunted Money',
+                    sub_title: 'Рекомендовано',
+                    search: 'haunted_money'
+                },
+                {
+                    img: 'vegas_night.svg',
+                    title: 'vegas Night',
+                    sub_title: 'Рекомендовано',
+                    search: 'vegas_night'
+                },
+                {
+                    img: 'crazy_monkey.svg',
+                    title: 'Crazy Monkey',
+                    sub_title: 'Рекомендовано',
+                    search: 'crazy_monkey'
+                },
+                {
+                    img: 'thunder_zeus.svg',
+                    title: 'Thunder Zeus',
+                    sub_title: 'Рекомендовано',
+                    search: 'thunder_zeus'
+                },
+                {
+                    img: 'fruit_cocktak.svg',
+                    title: 'Fruit Cocktak',
+                    sub_title: 'Рекомендовано',
+                    search: 'fruit_cocktak'
+                },
+                {
+                    img: 'crazy_monkey.svg',
+                    title: 'Crazy Monkey',
+                    sub_title: 'Рекомендовано',
+                    search: 'crazy_monkey'
+                },
+                {
+                    img: 'lucky_coin.svg',
+                    title: 'Lucky Coin',
+                    sub_title: 'Рекомендовано',
+                    search: 'lucky_coin'
+                },
+                {
+                    img: 'book_of_gold.svg',
+                    title: 'Book Of Gold',
+                    sub_title: 'Рекомендовано',
+                    search: 'book_of_gold'
+                },
+                {
+                    img: 'haunted_money.svg',
+                    title: 'Haunted Money',
+                    sub_title: 'Рекомендовано',
+                    search: 'haunted_money'
+                },
+            ]
         }
     },
     methods: {
-        SelectFilterBox() {
-
-        }
+        get_img(image) {
+            return require("../assets/img/" + image)
+        },
     }
 }
 </script>
