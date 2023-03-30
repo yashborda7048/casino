@@ -5,12 +5,17 @@ fieldset {
     position: absolute;
     z-index: 99;
     background-color: #131420;
-    min-width: 140px;
+    margin-top: 10px;
+    margin-left: 4px;
 
     .rowline {
       width: 100%;
+      color: #fff;
+      padding: 5px;
       background-color: $primary-color;
+      transition: all 0.3s ease;
       &:hover {
+        color: #fff;
         background: transparent;
       }
     }

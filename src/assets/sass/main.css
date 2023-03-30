@@ -83,13 +83,18 @@ fieldset .navbar-collapse {
   position: absolute;
   z-index: 99;
   background-color: #131420;
-  min-width: 140px;
+  margin-top: 10px;
+  margin-left: 4px;
 }
 fieldset .navbar-collapse .rowline {
   width: 100%;
+  color: #fff;
+  padding: 5px;
   background-color: #794dfd;
+  transition: all 0.3s ease;
 }
 fieldset .navbar-collapse .rowline:hover {
+  color: #fff;
   background: transparent;
 }
 
@@ -250,9 +255,6 @@ fieldset .navbar-collapse .rowline:hover {
   gap: 24px;
   list-style-type: none;
   padding: 0;
-}
-.left_menu .menu_list .nav-link:hover img, .left_menu .menu_list .nav-link.active img {
-  background-color: #794dfd;
 }
 .left_menu .favorite_list {
   display: flex;
@@ -440,7 +442,7 @@ fieldset .navbar-collapse .rowline:hover {
   gap: 10px;
 }
 .filter_section .filter_tab {
-  max-width: 402px;
+  max-width: 433px;
   display: flex;
   gap: 10px;
   margin-bottom: 15px;

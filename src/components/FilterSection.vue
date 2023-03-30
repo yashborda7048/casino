@@ -2,7 +2,9 @@
     <div class="filter_section flex-column-reverse flex-lg-row">
         <div class="w-100">
             <div class="filter_tab">
-                <button class="btn-primary filter_btn">Фильтр</button>
+                <button class="btn-primary filter_btn">Фильтр <span
+                        :class="toggleFilter.length == 0 ? 'd-none' : 'd-inline-block'">({{ toggleFilter.length
+                        }})</span></button>
                 <button class="btn-dark">Категории</button>
                 <fieldset class="seleted ">
                     <button class="seleted navbar-toggler btn-dark" type="button" data-bs-toggle="collapse"
@@ -12,25 +14,30 @@
                         <img src="../assets/img/rightarrow-icon.svg" class="seleted right-arrow" alt="">
                     </button>
                     <div class="seleted collapse navbar-collapse " id="Content-1">
-                        <div class="d-flex flex-column align-items-start">
+                        <div class="d-flex flex-column align-items-start" v-for="filter in Filter_list"
+                            :key="filter.search">
                             <div class="d-flex gap-3 ps-2 rowline">
-                                <input type="checkbox" id="crazy_monkey" value="crazy_monkey" v-model="checkedNames">
-                                <label for="crazy_monkey">Crazy Monkey</label>
-                            </div>
-                            <div class="d-flex gap-3 ps-2 rowline">
-                                <input type="checkbox" id="lucky_coin" value="lucky_coin" v-model="checkedNames">
-                                <label for="lucky_coin">Lucky Coin</label>
-                            </div>
-                            <div class="d-flex gap-3 ps-2 rowline">
-                                <input type="checkbox" id="book_of_gold" value="book_of_gold" v-model="checkedNames">
-                                <label for="book_of_gold">Book Of Gold</label>
+                                <input type="checkbox" :id="filter.search" :value="filter.search" v-model="toggleFilter"
+                                    @change="showFilter()">
+                                <label :for="filter.search">{{ filter.title }}</label>
                             </div>
                         </div>
                     </div>
                 </fieldset>
             </div>
-            <div class="row" id="card_container">
+            <div class="row" id="card_container" v-if="alldata">
                 <div class="col-6 col-md-4 col-lg-3 " v-for="item in game_list" :key="item.img">
+                    <div class="game_card">
+                        <img :src="get_img(item.img)" alt="">
+                        <div class="card_body">
+                            <h5 class="card_title">{{ item.title }}</h5>
+                            <p class="card_sub_title">{{ item.sub_title }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="card_container" v-else>
+                <div class="col-6 col-md-4 col-lg-3 " v-for="item in result" :key="item.img">
                     <div class="game_card">
                         <img :src="get_img(item.img)" alt="">
                         <div class="card_body">
@@ -134,90 +141,47 @@
 </template>
 
 <script>
+import data from '../json/data.json'
+
 export default {
     data() {
         return {
-            checkedNames: [],
-            game_list: [
-                {
-                    img: 'crazy_monkey.svg',
-                    title: 'Crazy Monkey',
-                    sub_title: 'Рекомендовано',
-                    search: 'crazy_monkey'
-                },
-                {
-                    img: 'lucky_coin.svg',
-                    title: 'Lucky Coin',
-                    sub_title: 'Рекомендовано',
-                    search: 'lucky_coin'
-                },
-                {
-                    img: 'book_of_gold.svg',
-                    title: 'Book Of Gold',
-                    sub_title: 'Рекомендовано',
-                    search: 'book_of_gold'
-                },
-                {
-                    img: 'haunted_money.svg',
-                    title: 'Haunted Money',
-                    sub_title: 'Рекомендовано',
-                    search: 'haunted_money'
-                },
-                {
-                    img: 'vegas_night.svg',
-                    title: 'vegas Night',
-                    sub_title: 'Рекомендовано',
-                    search: 'vegas_night'
-                },
-                {
-                    img: 'crazy_monkey.svg',
-                    title: 'Crazy Monkey',
-                    sub_title: 'Рекомендовано',
-                    search: 'crazy_monkey'
-                },
-                {
-                    img: 'thunder_zeus.svg',
-                    title: 'Thunder Zeus',
-                    sub_title: 'Рекомендовано',
-                    search: 'thunder_zeus'
-                },
-                {
-                    img: 'fruit_cocktak.svg',
-                    title: 'Fruit Cocktak',
-                    sub_title: 'Рекомендовано',
-                    search: 'fruit_cocktak'
-                },
-                {
-                    img: 'crazy_monkey.svg',
-                    title: 'Crazy Monkey',
-                    sub_title: 'Рекомендовано',
-                    search: 'crazy_monkey'
-                },
-                {
-                    img: 'lucky_coin.svg',
-                    title: 'Lucky Coin',
-                    sub_title: 'Рекомендовано',
-                    search: 'lucky_coin'
-                },
-                {
-                    img: 'book_of_gold.svg',
-                    title: 'Book Of Gold',
-                    sub_title: 'Рекомендовано',
-                    search: 'book_of_gold'
-                },
-                {
-                    img: 'haunted_money.svg',
-                    title: 'Haunted Money',
-                    sub_title: 'Рекомендовано',
-                    search: 'haunted_money'
-                },
-            ]
+            toggleFilter: [],
+            Filter_list: '',
+            game_list: data,
+            result: null,
+            alldata: true
         }
     },
     methods: {
         get_img(image) {
             return require("../assets/img/" + image)
         },
+        filterListFn() {
+            this.Filter_list = data.reduce((accumulator, current) => {
+                if (!accumulator.find(item => item.search === current.search)) {
+                    accumulator.push(current);
+                }
+                return accumulator;
+            }, []);
+        },
+        showFilter() {
+            this.alldata = false;
+
+            this.result = data.filter((obj1) => {
+                return this.toggleFilter.some((obj2) => {
+                    return obj1.search === obj2
+                })
+            });
+
+            console.log(this.result, 'result');
+            if (this.result.length == 0) {
+                this.alldata = true;
+            }
+        }
+    },
+    mounted() {
+        this.filterListFn();
     }
 }
 </script>

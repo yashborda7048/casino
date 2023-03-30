@@ -15,9 +15,9 @@
                     <input class="form-control " type="search" placeholder="Поиск казино, игр и многого другого...">
                 </form>
                 <div class="btn_list">
-                    <select class="form-select">
-                        <option value="rn" selected>Ru</option>
-                        <option value="en">En</option>
+                    <select class="form-select seleted">
+                        <option class="rowline" value="rn" selected>Ru</option>
+                        <option class="rowline" value="en">En</option>
                     </select>
 
                     <!-- Log in  -->
@@ -31,7 +31,3 @@
         </div>
     </nav>
 </template>
-
-<script >
-
-</script>

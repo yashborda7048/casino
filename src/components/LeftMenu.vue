@@ -6,37 +6,44 @@
         <ul class="menu_list navbar-nav">
             <li class="nav-item">
                 <router-link to="/online_casinos" class="nav-link" aria-current="page">
-                    <img src="../assets/img/online_casinos_icon.svg" alt="">
+                    <img v-if="$route.name == 'online_casinos'" src="../assets/img/online_casinos_icon_active.svg" alt="">
+                    <img v-else src="../assets/img/online_casinos_icon.svg" alt="">
                 </router-link>
             </li>
             <li class="nav-item">
                 <router-link to="/games" class="nav-link" aria-current="page">
-                    <img src="../assets/img/games.svg" alt="">
+                     <img v-if="$route.name == 'games'" src="../assets/img/games_active.svg" alt="">
+                    <img v-else src="../assets/img/games.svg" alt="">
                 </router-link>
             </li>
             <li class="nav-item">
                 <router-link to="/bonuses" class="nav-link" aria-current="page">
-                    <img src="../assets/img/bonuses.svg" alt="">
+                     <img v-if="$route.name == 'bonuses'" src="../assets/img/bonuses_active.svg" alt="">
+                    <img v-else src="../assets/img/bonuses.svg" alt="">
                 </router-link>
             </li>
             <li class="nav-item">
                 <router-link to="/guides" class="nav-link" aria-current="page">
-                    <img src="../assets/img/guides.svg" alt="">
+                     <img v-if="$route.name == 'guides'" src="../assets/img/guides_active.svg" alt="">
+                    <img v-else src="../assets/img/guides.svg" alt="">
                 </router-link>
             </li>
             <li class="nav-item">
                 <router-link to="/complaints" class="nav-link" aria-current="page">
-                    <img src="../assets/img/complaints.svg" alt="">
+                     <img v-if="$route.name == 'complaints'" src="../assets/img/complaints_active.svg" alt="">
+                    <img v-else src="../assets/img/complaints.svg" alt="">
                 </router-link>
             </li>
             <li class="nav-item">
                 <router-link to="/user_reviews" class="nav-link" aria-current="page">
-                    <img src="../assets/img/user_reviews.svg" alt="">
+                     <img v-if="$route.name == 'user_reviews'" src="../assets/img/user_reviews_active.svg" alt="">
+                    <img v-else src="../assets/img/user_reviews.svg" alt="">
                 </router-link>
             </li>
             <li class="nav-item">
                 <router-link to="/news" class="nav-link" aria-current="page">
-                    <img src="../assets/img/news.svg" alt="">
+                     <img v-if="$route.name == 'news'" src="../assets/img/news_active.svg" alt="">
+                    <img v-else src="../assets/img/news.svg" alt="">
                 </router-link>
             </li>
         </ul>
